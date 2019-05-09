@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /*Goog practice to inherti from the body*/
+    box-sizing: inherit;
+}
+
+html {
+    /* Sets the root font size to 10px using percentage. */
+    font-size: 62.5%; // 1rem = 10px
+
+    @include respond(large) {
+        font-size: 75% // 12px
+    }
+
+    @include respond(mid) {
+        font-size: 56.25% // 9px
+    }
+
+    @include respond(mid-small) {
+        font-size: 50% // 8px
+    }
+}
+
+body {
+    padding: 3rem;
+    box-sizing: border-box;
+
+    @include respond(mid-small) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}

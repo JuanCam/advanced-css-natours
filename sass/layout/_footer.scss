@@ -1,0 +1,83 @@
+.footer {
+    background-color: $color-grey-dark-3;
+    padding: 10rem 0;
+    font-size: 1.4rem;
+    color: $color-grey-light-1;
+
+    @include respond(mid-small) {
+        padding: 8rem 0;
+    }
+
+    &__logo-box {
+        // thgis is because an inline element behaves like text, and the img tag is an inline element.
+        text-align: center;
+        margin-bottom: 8rem;
+
+        @include respond(mid-small) {
+            margin-bottom: 6rem;
+        }
+    }
+
+    &__logo {
+        width: 15rem;
+        height: auto;
+    }
+
+    &__navigation {
+        border-top: 1px solid $color-grey-light-2;
+        padding-top: 2rem;
+        display: inline-block;
+
+        @include respond(mid-small) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__link {
+        
+
+        &:link,
+        &:visited {
+            color: $color-grey-light-1;
+            background-color: $color-grey-dark-3;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: .5s all;
+        }
+
+        &:hover,
+        &:active {
+            display: inline-block;
+            color: $color-primary;
+            box-shadow: 0 1rem  2rem rgba($color-black, .4);
+            transform: rotate(5deg) scale(1.3);
+        }
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__copyright {
+        border-top: 1px solid $color-grey-light-2;
+        padding-top: 2rem;
+        width: 80%;
+        float: right;
+
+
+        @include respond(mid-small) {
+            width: 100%;
+            text-align: center;
+            float: none;
+        }
+    }
+}

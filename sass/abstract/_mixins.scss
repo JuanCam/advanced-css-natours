@@ -1,0 +1,42 @@
+@mixin clearfix {
+    &:after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+
+/**
+0 - 600px: Phone
+600px - 900px: Tablet portrait
+900px - 1200px: Tablet landscape
+[1200px - 1800px]: Normal
+1800px< : Big desktop
+**/
+
+/**
+$breakpoint argument choices:
+- small
+- mid-small
+- mid
+- large
+**/
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == small {
+        // 600px and apply conly to screens (eg. not printables)
+        @media only screen and (max-width: 37.5em) { @content };
+    }
+    @if $breakpoint == mid-small {
+        // 900px and apply conly to screens (eg. not printables)
+        @media only screen and (max-width: 56.25em) { @content };
+    }
+    @if $breakpoint == mid {
+        // 1200px and apply conly to screens (eg. not printables)
+        @media only screen and (max-width: 75em) { @content };
+    }
+    @if $breakpoint == large {
+        // 1800px and apply conly to screens (eg. not printables)
+        @media only screen and (min-width: 112.5em) { @content };
+    }
+}
